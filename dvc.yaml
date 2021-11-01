@@ -9,8 +9,13 @@ stages:
       - src/utils/train.py
       - configs/config.yaml
       - params.yaml
+    params:
+      - EPOCHS
+      - LEARNING_RATE
+      - BATCH_SIZE
+      - NUM_WORKERS
     outs:
-      - artifacts/my_model
+      - artifacts/my_model/pytorch_model.bin
 
 
   evaluate:
