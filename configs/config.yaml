@@ -1,0 +1,15 @@
+# It contains all the configs required in the project
+
+artifacts:
+  ARTIFACTS_DIR: artifacts
+  TRAINED_MODEL_DIR: model
+  BASE_MODEL_DIR: my_model
+  BASE_MODEL_NAME: bert-base-uncased
+
+
+source_data:
+  data_dir: artifacts/data
+  train_data_file: train.tsv
+  dev_data_file: dev.tsv
+
+

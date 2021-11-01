@@ -1,0 +1,8 @@
+# This contains params to be used by the stages to train or predict
+
+EPOCHS: 1
+LEARNING_RATE: 0.00002
+BATCH_SIZE: 32
+MAX_TRAIN: 30
+MAX_VALID: 50
+NUM_WORKERS: 1

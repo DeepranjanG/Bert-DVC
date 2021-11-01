@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  load_and_train:
+    cmd: python src/stage_01_load_and_train.py --config=configs/config.yaml --params=params.yaml
+    deps:
+    - path: configs/config.yaml
+      md5: d11d857ac3f1804898367d5d3afca8dd
+      size: 297
+    - path: params.yaml
+      md5: d15352ec0b331ff4b13fe58ec722785f
+      size: 166
+    - path: src/stage_01_load_and_train.py
+      md5: 9fecf4e78d70171f26250020e4fe55e4
+      size: 2760
+    - path: src/utils/all_utils.py
+      md5: 424ed2e5fd3457ffa7cfe13716cc77e2
+      size: 1224
+    - path: src/utils/dataset.py
+      md5: 71be18c4a5fbde89911725cbadb93230
+      size: 1465
+    - path: src/utils/modeling.py
+      md5: 6fcc9592c1066f024b1523dd1975c84e
+      size: 504
+    - path: src/utils/train.py
+      md5: c403305161aaf4bdcff5b093804fd992
+      size: 1399
+    outs:
+    - path: artifacts/my_model
+      md5: 8ba3dfcdab78bde91e1d38b0407b82f7.dir
+      size: 438017006
+      nfiles: 2

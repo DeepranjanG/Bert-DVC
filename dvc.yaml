@@ -1,0 +1,24 @@
+stages:
+  load_and_train:
+    cmd: python src/stage_01_load_and_train.py --config=configs/config.yaml --params=params.yaml
+    deps: 
+      - src/stage_01_load_and_train.py
+      - src/utils/all_utils.py
+      - src/utils/dataset.py
+      - src/utils/modeling.py
+      - src/utils/train.py
+      - configs/config.yaml
+      - params.yaml
+    outs:
+      - artifacts/my_model
+
+
+  evaluate:
+    cmd: python src/stage_02_evaluate.py --config=configs/config.yaml --params=params.yaml
+    deps: 
+      - src/stage_02_evaluate.py
+      - src/utils/all_utils.py
+      - configs/config.yaml
+      - params.yaml
+
+
