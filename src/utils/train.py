@@ -5,7 +5,7 @@ import torch.optim as optim
 from torch.utils.data import  DataLoader
 from tqdm import tqdm, trange
 from transformers import AutoConfig, AutoTokenizer
-from src.utils.all_utils import evaluate
+# from src.utils.all_utils import evaluate
 
 
 def train(model, criterion, optimizer, train_loader, val_loader, device, epochs):
