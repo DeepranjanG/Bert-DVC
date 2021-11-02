@@ -16,7 +16,7 @@ def evaluate(model, criterion, dataloader, device):
     mean_acc, mean_loss, count = 0, 0, 0
     print(dataloader)
     with torch.no_grad():
-        for input_ids, attention_mask, labels in tqdm(dataloader, desc="Evaluating"):
+        for input_ids, attention_mask, labels in dataloader:
             input_ids, attention_mask, labels = input_ids.to(device), attention_mask.to(device), labels.to(device)
             logits = model(input_ids, attention_mask)
             mean_loss += criterion(logits.squeeze(-1), labels.float()).item()

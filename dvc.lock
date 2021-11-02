@@ -7,7 +7,7 @@ stages:
       md5: d11d857ac3f1804898367d5d3afca8dd
       size: 297
     - path: params.yaml
-      md5: d15352ec0b331ff4b13fe58ec722785f
+      md5: 72cb1855a3b62ea683c20fb9df23e9ab
       size: 166
     - path: src/stage_01_load_and_train.py
       md5: 9fecf4e78d70171f26250020e4fe55e4
@@ -27,25 +27,31 @@ stages:
     params:
       params.yaml:
         BATCH_SIZE: 32
-        EPOCHS: 1
+        EPOCHS: 2
         LEARNING_RATE: 2e-05
         NUM_WORKERS: 1
     outs:
     - path: artifacts/my_model/pytorch_model.bin
-      md5: 9645798df2847cf364e3990bee26b450
+      md5: 20a68901a99b0ba08fcec1ae88388257
       size: 438016503
   evaluate:
     cmd: python src/stage_02_evaluate.py --config=configs/config.yaml --params=params.yaml
     deps:
+    - path: artifacts/my_model/pytorch_model.bin
+      md5: 20a68901a99b0ba08fcec1ae88388257
+      size: 438016503
     - path: configs/config.yaml
       md5: d11d857ac3f1804898367d5d3afca8dd
       size: 297
     - path: params.yaml
-      md5: d15352ec0b331ff4b13fe58ec722785f
+      md5: 72cb1855a3b62ea683c20fb9df23e9ab
       size: 166
     - path: src/stage_02_evaluate.py
-      md5: 69e3a5b962ff382f85ecf38a9ea8661c
-      size: 3742
+      md5: 71b1294f251ef70d00ca3f67a2b0f4e1
+      size: 2629
     - path: src/utils/all_utils.py
       md5: 8faea69a22cfdc12da543985d90304a7
       size: 221
+    - path: src/utils/evaluate.py
+      md5: 5acf742cd15727e4310232738d810917
+      size: 1093

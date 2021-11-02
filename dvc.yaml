@@ -23,7 +23,9 @@ stages:
     deps: 
       - src/stage_02_evaluate.py
       - src/utils/all_utils.py
+      - src/utils/evaluate.py
       - configs/config.yaml
       - params.yaml
+      - artifacts/my_model/pytorch_model.bin
 
 
